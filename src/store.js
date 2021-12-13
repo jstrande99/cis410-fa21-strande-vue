@@ -8,10 +8,10 @@ export default createStore({
     }, 
     mutations: {
         storeTokenInApp(state, myToken){
-            state.token = myToken
+            state.token = myToken;
         }, 
         storeUserInApp(state, theUser){ 
-            state.user = theUser
+            state.user = theUser;
         }
     },
     actions: {}

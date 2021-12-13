@@ -7,7 +7,7 @@
 
     <form @submit.prevent="onSubmit">
       <div class="mb-3">
-        <label for="email-input" class="form-label">Password</label
+        <label for="email-input" class="form-label">Email</label
         ><input
           type="email"
           class="form-control"
@@ -62,7 +62,7 @@ export default {
 
         this.$store.commit("storeTokenInApp", myResponse.data.token);
 
-        this.$store.commit("storeUserInApp", myResponse.user);
+        this.$store.commit("storeUserInApp", myResponse.data.user);
 
         this.$router.replace("/account");
       }).catch((myError)=>{
