@@ -1,5 +1,6 @@
 import{createStore} from 'vuex';
 import axios from 'axios';
+import myRoutes from "./routes.js"
 export default createStore({
     state: {
         token: null,
@@ -15,6 +16,10 @@ export default createStore({
         },
         storeMovies(state, movies){
             state.movies = movies; 
+        },
+        clearAuthData(state){
+            state.token = null; 
+            state.user = null;
         }
     },
     actions: {
@@ -22,6 +27,16 @@ export default createStore({
             axios.get("/movies").then((aResponse)=>{
                 console.log("response in movies:", aResponse);
                 commit("storeMovies", aResponse.data);
+            });
+        },
+        logout({commit, state}){
+            axios.post("/contacts/logout", null,{
+                headers:{ Authorization: `Bearer ${state.token}`}
+            }).then(()=>{
+                commit("clearAuthData");
+                myRoutes.replace("/");
+            }).catch(()=>{
+                console.log("ERROR in logging out");
             })
         }
     }
