@@ -5,7 +5,7 @@ export default createStore({
     state: {
         token: null,
         user: null, 
-        movies: []
+        products: []
     }, 
     mutations: {
         storeTokenInApp(state, myToken){
@@ -14,8 +14,8 @@ export default createStore({
         storeUserInApp(state, theUser){ 
             state.user = theUser;
         },
-        storeMovies(state, movies){
-            state.movies = movies; 
+        storeProducts(state, products){
+            state.products = products; 
         },
         clearAuthData(state){
             state.token = null; 
@@ -23,14 +23,14 @@ export default createStore({
         }
     },
     actions: {
-        getMovies({commit}){
-            axios.get("/movies").then((aResponse)=>{
-                console.log("response in movies:", aResponse);
-                commit("storeMovies", aResponse.data);
+        getProducts({commit}){
+            axios.get("/products").then((aResponse)=>{
+                console.log("response in products:", aResponse);
+                commit("storeProducts", aResponse.data);
             });
         },
         logout({commit, state}){
-            axios.post("/contacts/logout", null,{
+            axios.post("/customers/logout", null,{
                 headers:{ Authorization: `Bearer ${state.token}`}
             }).then(()=>{
                 commit("clearAuthData");

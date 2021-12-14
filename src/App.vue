@@ -18,7 +18,7 @@ export default {
     "my-header": Header,
   },
   created(){
-    this.$store.dispatch("getMovies");
+    this.$store.dispatch("getProducts");
   }
 };
 </script>

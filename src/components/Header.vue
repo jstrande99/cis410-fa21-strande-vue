@@ -49,4 +49,5 @@
 .navbar-nav{
   align-items: center;
 }
+
 </style>

@@ -2,18 +2,18 @@
   <div>
     <div class="card">
       <div class="card-body">
-        <h2 class="text-primary">{{movie.Title}}</h2>
+        <h2 class="text-primary">{{product.ProductID}}</h2>
         <br/>
-        <p>Pitch Text: <br/><strong>{{movie.PitchText}}</strong></p>
-        <p>Summary: <br/><strong>{{movie.Summary}}</strong></p>
+        <p>Pitch Text: <br/><strong>{{product.CategoryID}}</strong></p>
+        <p>Summary: <br/><strong>{{product.CategoryName}}</strong></p>
         <p>Budget: <br/><strong>{{formatedBudget}}</strong></p>
-        <p>Genre: <br/><strong>{{movie.GenreName}}</strong></p>
+        <!-- <p>Genre: <br/><strong>{{movie.GenreName}}</strong></p> -->
 
       </div>
     </div>
     <br/>
 
-    <router-link v-if="auth" :to="`/movies/${this.$route.params.pk}/review`">
+    <router-link v-if="auth" :to="`/products/${this.$route.params.pk}/review`">
       <button class="btn btn-success">
         Add a Review
       </button>
@@ -34,18 +34,18 @@
 <script>
 export default {
   computed:{
-    movie(){
-      let allMovies = this.$store.state.movies; 
+    product(){
+      let allProducts = this.$store.state.products; 
 
-      let thisMovie = allMovies.find((aMovie)=>{return aMovie.MoviePK == this.$route.params.pk});
+      let thisProduct = allProducts.find((aProduct)=>{return aProduct.ProductID == this.$route.params.pk});
 
-      return thisMovie;
+      return thisProduct;
     },
     formatedBudget(){
       return new Intl.NumberFormat("en-US",{
         style: "currency", 
         currency:"USD"
-      }).format(this.movie.Budget);
+      }).format(this.product.productPrice);
     },
     auth(){
       return this.$store.state.token;

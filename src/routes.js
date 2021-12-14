@@ -2,8 +2,8 @@ import {createRouter, createWebHistory} from 'vue-router';
 
 import Home from "./components/Home.vue";
 import Login from "./components/Login.vue";
-import MovieDetail from "./components/MovieDetail.vue";
-import Movies from "./components/Movies.vue"; 
+import ProductDetail from "./components/ProductDetail.vue";
+import Products from "./components/Products.vue"; 
 import NotFound from "./components/NotFound.vue"; 
 import ReviewCreate from "./components/ReviewCreate.vue";
 import Signup from "./components/Signup.vue";
@@ -17,8 +17,8 @@ const router = createRouter({
         {path: "/", component: Home}, 
         {path: "/account", component: Account, beforeEnter(to,from,next){if(myStore.state.token){next();}else{next("/login")}}},
         {path: "/login", component: Login},
-        {path: "/movies", component: Movies},
-        {path: "/movies/:pk", component: MovieDetail, children: [{path: "review", component: ReviewCreate}]},
+        {path: "/products", component: Products},
+        {path: "/products/:pk", component: ProductDetail, children: [{path: "review", component: ReviewCreate}]},
         {path: "/signup", component: Signup},
         {path: "/:invalidroute(.*)", component: NotFound},
     ]

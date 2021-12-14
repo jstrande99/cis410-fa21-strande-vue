@@ -78,7 +78,7 @@ export default {
         password: this.password
       };
       // console.log(myFormData); 
-      axios.post("/contacts",myFormData)
+      axios.post("/customers",myFormData)
       .then((myResponse)=>{
         console.log("the response", myResponse);
         this.$router.replace("/login?signupsuccess=true");

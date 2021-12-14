@@ -57,7 +57,7 @@ export default {
         password: this.password
       }
       // console.log("the form data", myFormData)
-      axios.post("/contacts/login", myFormData).then((myResponse)=>{
+      axios.post("/customers/login", myFormData).then((myResponse)=>{
         // console.log("the response", myResponse)
 
         this.$store.commit("storeTokenInApp", myResponse.data.token);

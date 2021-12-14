@@ -12,18 +12,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="aMovie in theMovies" :key="aMovie.MoviePK">
+          <tr v-for="aProduct in theProducts" :key="aProduct.ProductID">
             <th>
-              {{aMovie.Title}}
+              {{aProduct.productName}}
             </th>
             <th>
-              {{aMovie.PitchText}}
+              {{aProduct.CategoryID}}
             </th>
             <th>
-              {{aMovie.GenreName}}
+              {{aProduct.CategoryName}}
             </th>
             <th>
-              <router-link :to="`/movies/${aMovie.MoviePK}`">
+              <router-link :to="`/products/${aProduct.ProductID}`">
                 <button class="btn btn-primary">
                 Details
                 </button>
@@ -38,8 +38,8 @@
 <script>
 export default {
   computed:{
-    theMovies(){
-      return this.$store.state.movies; 
+    theProducts(){
+      return this.$store.state.products; 
     }
   }
 }
