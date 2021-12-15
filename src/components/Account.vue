@@ -5,17 +5,17 @@
       <h3>{{firstName}}'s Orders</h3>
 
     <p v-if="accountError" class="text-danger">Cannot get your account info, please try again later </p>
-      <table v-if="reviewsByUser" class="table">
+      <table v-if="ordersByUser" class="table">
         <thead>
           <th>Product Name</th>
-          <th>Category</th>
-          <th>Price</th>
+          <th>Payment Type</th>
+          <th>Order ID</th>
         </thead>  
         <tbody>
           <tr v-for="thisOrder in ordersByUser" :key="thisOrder.OrderID">
             <th><router-link :to='`/products/${thisOrder.ProductID}`'>{{thisOrder.productName}}</router-link></th>
-            <th>{{thisOrder.CategoryName}}</th>
-            <th>{{thisOrder.productPrice}}</th>
+            <th>{{thisOrder.Payment}}</th>
+            <th>{{thisOrder.OrderID}}</th>
           </tr>
         </tbody>
       </table> 

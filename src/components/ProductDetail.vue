@@ -2,11 +2,11 @@
   <div>
     <div class="card">
       <div class="card-body">
-        <h2 class="text-primary">{{product.ProductID}}</h2>
+        <h2 class="text-primary">{{product.productName}}</h2>
         <br/>
-        <p>Pitch Text: <br/><strong>{{product.CategoryID}}</strong></p>
-        <p>Summary: <br/><strong>{{product.CategoryName}}</strong></p>
-        <p>Budget: <br/><strong>{{formatedBudget}}</strong></p>
+        <p>Category ID: <br/><strong>{{product.CategoryID}}</strong></p>
+        <p>Category: <br/><strong>{{product.CategoryName}}</strong></p>
+        <p>Price: <br/><strong>{{formatedBudget}}</strong></p>
         <!-- <p>Genre: <br/><strong>{{movie.GenreName}}</strong></p> -->
 
       </div>
@@ -15,13 +15,13 @@
 
     <router-link v-if="auth" :to="`/products/${this.$route.params.pk}/review`">
       <button class="btn btn-success">
-        Add a Review
+        Purchase Now
       </button>
     </router-link>
     
     <router-link v-else :to="`/login/`">
       <button class="btn btn-outline-success">
-        Sign In to Add a Review
+        Sign In to Purchase Now
       </button>
     </router-link>
 <br/>

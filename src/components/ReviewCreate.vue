@@ -4,39 +4,39 @@
       <div class="col-lg-10" >
         <div class="card" >
           <div class="card-body" >
-            <h4 >Create a Review</h4>
-            <form id="review-form" @submit.prevent="submitReview">
+            <h4 >Order now</h4>
+            <form id="order-form" @submit.prevent="submitOrder">
               <div class="mb-3" >
-                <label for="rating-input" class="form-label" 
-                  >Rating</label
+                <label for="quantity-input" class="form-label" 
+                  >Quantity</label
                 ><input
                   type="number"
                   class="form-control"
-                  id="rating-input"
+                  id="quantity-input"
                   required=""
                   min="1"
-                  max="10"
-                  v-model="rating"
+                  max="100"
+                  v-model="quantity"
                 />
               </div>
               <div class="mb-3" >
-                <label for="summary-input" class="form-label"
-                  >Review</label
+                <label for="payment-input" class="form-label"
+                  >Payment: (ApplePay, PayPal)</label
                 ><input
                   type="text"
                   row="3"
                   class="form-control"
-                  id="summary-input"
+                  id="payment-input"
                   required=""
-                  v-model="summary"
+                  v-model="payment"
                 />
               </div>
               <button type="submit" class="btn btn-primary">
-                Submit Review</button
+                Submit Order</button
               ><button
                 type="clear"
                 class="btn btn-outline-danger"
-                v-on:click="cancelReview"
+                v-on:click="cancelOrder"
               >
                 Cancel</button
               ><!---->
@@ -55,19 +55,19 @@ import axios from "axios";
 export default {
   data(){
     return{
-      rating: null,
-      summary: "",
+      quantity: null,
+      payment: "",
       errorMessage: null
     }
   },
   methods:{
-    submitReview(){
-      let myReview = {
-        rating: this.rating,
-        summary: this.summary,
-        movieFK: this.$route.params.pk
+    submitOrder(){
+      let myOrder = {
+        quantity: this.quantity,
+        payment: this.payment,
+        productID: this.$route.params.pk
       }
-      axios.post("/reviews",myReview,{
+      axios.post("/orders",myOrder,{
         headers:{Authorization: `Bearer ${this.$store.state.token}`}
       }).then(()=>{this.$router.replace("/account");
       }).catch(()=>{

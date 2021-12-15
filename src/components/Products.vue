@@ -1,13 +1,13 @@
 <template>
   <div>
-      <h1>Movies</h1>
+      <h1>All Products</h1>
       <hr/>
       <table class="table">
         <thead> 
           <tr> 
-            <th>Title</th>
-            <th>Pitch Text</th>
-            <th>Genre</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Category</th>
             <th></th>
           </tr>
         </thead>
@@ -17,7 +17,7 @@
               {{aProduct.productName}}
             </th>
             <th>
-              {{aProduct.CategoryID}}
+              ${{aProduct.productPrice}}
             </th>
             <th>
               {{aProduct.CategoryName}}
