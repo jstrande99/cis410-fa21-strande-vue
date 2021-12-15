@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <router-link class="navbar-brand" to="/">The Everything Store</router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,15 +16,15 @@
         </li>
 
          <li v-if="!auth" class="nav-item">
-          <router-link class="nav-link active" aria-current="page" to="/login"><button class="btn btn-warning">Login</button></router-link>
+          <router-link class="nav-link active" aria-current="page" to="/login"><button class="btn btn-dark btn-outline-secondary text-light">Login</button></router-link>
         </li>
 
         <li v-if="!auth" class="nav-item">
-          <router-link class="nav-link active" aria-current="page" to="/signup"><button class="btn btn-outline-warning text-dark">Signup</button></router-link>
+          <router-link class="nav-link active" aria-current="page" to="/signup"><button class="btn btn-dark text-light btn-outline-secondary">Signup</button></router-link>
         </li>
 
         <li v-if="auth" class="nav-item">
-          <button class="btn btn-warning" @click="onLogout">Logout</button>
+          <button class="btn btn-dark text-light btn-outline-secondary" @click="onLogout">Logout</button>
         </li>
       </ul>
     </div>

@@ -24,7 +24,7 @@
             </th>
             <th>
               <router-link :to="`/products/${aProduct.ProductID}`">
-                <button class="btn btn-primary">
+                <button class="btn btn-dark text-light">
                 Details
                 </button>
               </router-link>

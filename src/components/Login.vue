@@ -28,7 +28,7 @@
           v-model="password"
         />
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button
+      <button type="submit" class="btn btn-dark text-light">Submit</button
       ><!----><!---->
       <p class="form-text text-danger" v-if="credentialsError">Invalid credentials</p>
 

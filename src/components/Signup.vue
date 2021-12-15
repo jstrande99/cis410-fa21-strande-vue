@@ -49,7 +49,7 @@
           v-model="password"
         />
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-dark text-light">Submit</button>
       <p id="error-signup" class="text-danger">{{ errorMessage }}</p>
     </form>
   </div>

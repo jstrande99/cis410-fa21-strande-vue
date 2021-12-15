@@ -2,7 +2,7 @@
   <div>
     <div class="card">
       <div class="card-body">
-        <h2 class="text-primary">{{product.productName}}</h2>
+        <h2 class="text-dark">{{product.productName}}</h2>
         <br/>
         <p>Category ID: <br/><strong>{{product.CategoryID}}</strong></p>
         <p>Category: <br/><strong>{{product.CategoryName}}</strong></p>
@@ -14,13 +14,13 @@
     <br/>
 
     <router-link v-if="auth" :to="`/products/${this.$route.params.pk}/review`">
-      <button class="btn btn-success">
+      <button class="btn btn-dark text-light">
         Purchase Now
       </button>
     </router-link>
     
     <router-link v-else :to="`/login/`">
-      <button class="btn btn-outline-success">
+      <button class="btn btn-outline-dark">
         Sign In to Purchase Now
       </button>
     </router-link>

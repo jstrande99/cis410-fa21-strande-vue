@@ -2,7 +2,11 @@
   <div>
       <h1>Home</h1>
       <hr/>
-      <table class="table">
+      <hr/>
+      <h5 class="text-center">Our Top Products</h5>
+      <hr/>
+      
+      <table class="table table-dark">
         <thead> 
           <tr> 
             <th>Product</th>
@@ -24,7 +28,7 @@
             </th>
             <th>
               <router-link :to="`/products/${aProduct.ProductID}`">
-                <button class="btn btn-primary">
+                <button class="btn btn-dark text-light btn-outline-light">
                 Details
                 </button>
               </router-link>
